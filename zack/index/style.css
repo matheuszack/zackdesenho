@@ -1,0 +1,804 @@
+/*  import google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+/* custom scroll bar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* all similar content styling codes */
+section{
+    padding: 100px 0;
+}
+
+.Sobre, .serviçoss, .skills, .teams, .contact, footer{
+    font-family: 'Poppins', sans-serif;
+}
+.Sobre .Sobre-content, 
+.serviçoss .blocodep,
+.skills .skills-content,
+.contact .contact-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+section .titulo{
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    font-family: 'Ubuntu', sans-serif;
+}
+section .subtitulo{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    position: relative;
+    text-align: center;
+}
+
+/* navbar styling */
+.navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    padding: 30px 0;
+    font-family: 'Ubuntu', sans-serif;
+    transition: all 0.3s ease;
+    background-color: #070a03;
+}
+.navbar.sticky{
+    padding: 15px 0;
+    background: #000000;
+}
+.navbar .tamanhou{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .logo a{
+    color: #f82314;
+    font-size: 35px;
+    font-weight: 800;
+    -webkit-text-stroke: 2px #000000;
+}
+.navbar .logo a span{
+    color: #e40e0e;
+    transition: all 0.3s ease;
+}
+.navbar.sticky .logo a span{
+    color: #e61414;
+}
+
+.navbar .menu li{
+    list-style: none;
+    display: inline-block;
+    
+}
+.navbar .menu li a{
+    display: block;
+    color: #eb1c1c;
+    font-size: 25px;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+    border-color: #bb1f1f;
+    -webkit-text-stroke: 1px #000000;
+}
+.navbar .menu li a::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #ff0303;
+  transition: width 0.3s ease;
+
+}
+
+.navbar.sticky .menu {
+  background-color: rgba(255, 255, 255, 0.7); /* Fundo do menu com opacidade alterada ao rolar */
+}
+
+.navbar.sticky .menu li a:hover {
+  color: #dfee11;
+}
+
+.navbar .menu li a:hover::before {
+  width: 100%;
+}
+.navbar.sticky .menu li a:hover{
+    color: #dfee11;
+}
+
+/* menu btn styling */
+.menu-btn{
+    color: #fff0f0;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+.menu-cart{
+    color: #080505;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+.scroll-up-btn{
+    position: fixed;
+    height: 45px;
+    width: 42px;
+    background: #53f811;
+    right: 30px;
+    bottom: 10px;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    z-index: 999;
+    font-size: 30px;
+    border-radius: 6px;
+    border-bottom-width: 2px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.scroll-up-btn.show{
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
+.scroll-up-btn:hover{
+    filter: brightness(90%);
+}
+
+  
+/* home section styling */
+.home{
+    display: flex;
+    background: url("../imagem/capa2.2.png") no-repeat center;
+    height: 100vh;
+    color: #faf8f8;
+    min-height: 500px;
+    background-size:contain;
+    background-attachment: fixed;
+    font-family: 'Ubuntu', sans-serif;
+    flex-wrap: wrap;
+}
+.home .tamanhou{
+    margin: auto 0 auto 30px;
+}
+.home .home-content .text-1 {
+  font-size: 60px;
+  font-family:cursive;
+  font-weight: bold;
+  color: #070707;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: shine 2s infinite;
+
+  @keyframes shine {
+      0% {
+          opacity: 0.5;
+          transform: scale(1);
+      }
+      50% {
+          opacity: 1;
+          transform: scale(1.2);
+      }
+      100% {
+          opacity: 0.5;
+          transform: scale(1);
+      }
+  }
+}
+
+.home .home-content .text-2{
+    font-size: 75px;
+    font-weight: 600;
+    margin-left: -3px;
+    color: #070707;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    -webkit-text-stroke: 2px #ec0b0b;
+}
+.home .home-content .text-3{
+    font-size: 40px;
+    margin: 5px 0;
+    color: #e40e0e;
+    -webkit-text-stroke: 2px #070707;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+.home .home-content .text-3 span{
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+}
+.home .home-content a{
+    display: inline-block;
+    background: #e01818;
+    color: #1a0d0d;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 30px;
+    padding: 12px 36px;
+    margin-top: 20px;
+    font-weight: 400;
+    border-radius: 6px;
+    border: 2px solid #090909;
+    transition: all 0.3s ease;
+}
+.home .home-content a:hover{
+    color: #000000;
+    background: rgb(34, 224, 34);
+}
+
+.home .vai {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    flex-wrap: wrap;
+    bottom: 5%;
+    left: calc(50% - 25px);
+    justify-content: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+.home .vai span{
+    text-align: center;
+    font-size: 40px;
+    color: #000000;
+    background: #ecd715f6;
+    border-radius: 90px;
+    padding: 3px;
+    animation: animate 2s 3;
+    position: relative;
+}
+
+@keyframes animate {
+    0%{
+        top: 0px;
+        animation-delay: 2s;
+    }
+    50%{
+        top: 8px;
+    }
+    100%{
+        top: 0px;
+    }
+}
+
+/* Sobre section styling */
+.tamanhou{
+  max-width: 1300px;
+  padding: 0 80px;
+  margin: auto;
+}
+
+.tamanhou2 {
+  max-width: 2500px;
+  padding: 0 80px;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.tamanhou2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to bottom, #000000, #ff0000);
+  z-index: -1;
+  opacity: 0.7;
+}
+
+.tamanhou2::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: inherit;
+  backdrop-filter: blur(10px);
+  z-index: -2;
+}
+
+
+.Sobre .Sobre-content .left {
+  width: 45%;
+}
+
+.Sobre .Sobre-content .left img {
+  height: 700px;
+  width: 500px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.Sobre .Sobre-content .right {
+  width: 55%;
+}
+
+.Sobre .Sobre-content .right .text {
+  font-size: 28px; /* Aumenta o tamanho da fonte */
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-family: 'Arial', sans-serif; /* Substitua 'Arial' pela fonte desejada */
+  color: #fcfcfc; /* Cor do texto */
+  letter-spacing: 0.5px; /* Espaçamento entre as letras */
+}
+
+.Sobre .Sobre-content .right .text span {
+  color: rgb(238, 217, 221);
+}
+
+.Sobre .Sobre-content .right p {
+  text-align: justify;
+  line-height: 1.6; /* Espaçamento entre as linhas */
+  color: #fcfcfc; /* Cor do texto */     }
+
+.Sobre .Sobre-content .right a{
+    display: inline-block;
+    background: #f30000; /* ---------------------------------------------------*/
+    color: #000000;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px 30px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid #000000;
+    transition: all 0.3s ease;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  }
+
+.Sobre .Sobre-content .right a:hover{
+    color: #ffffff;
+    background: rgb(19, 224, 19);
+}
+
+/* serviçoss section styling */
+.serviçoss, .teams{
+    color:#000000;
+    background: #000000;
+}
+.serviçoss .titulo{
+    color: #ffffff;
+}
+.serviçoss .subtitulo{
+    color: #ffffff;
+}
+
+.serviçoss .blocodep .card {
+  width: calc(33% - 20px);
+  text-align: center;
+  border-radius: 6px;
+  padding: 20px 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  /* Adiciona degradê vermelho ao fundo do card */
+  background: linear-gradient(to bottom, #da4d4d,#ee5555,#dc3e3e,#e83939,#e90a0a,#ea1515,#d60303,#bb0a0a,#a60000, #9e0000, #860000);
+}
+.serviçoss .blocodep .card:hover{
+    background: #26f026;
+}
+.serviçoss .blocodep .card .box{
+    transition: all 0.3s ease;
+}
+.serviçoss .blocodep .card:hover .box{
+    transform: scale(1.05);
+}
+.serviçoss .blocodep .card i{
+    font-size: 50px;
+    color: #fffffff5;
+    transition: color 0.3s ease;
+}
+.serviçoss .blocodep .card:hover i{
+    color: #ffffff;
+}
+.serviçoss .blocodep .card .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+    color: #000000;
+}
+
+.serviçoss .blocodep .card .box p{
+  color: #ffffff;
+}
+/* skills section styling */
+
+.skills .skills-content .column{
+    width: calc(50% - 30px);
+}
+.skills .skills-content .left .text{
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    
+}
+.skills .skills-content .left p{
+    text-align: justify;
+   
+    
+}
+
+.skills .skills-content .left a{
+    display: inline-block;
+    background: rgb(246, 11, 11);
+    color: #000000;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 16px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid #000000;
+    transition: all 0.3s ease;
+}
+.skills .skills-content .left a:hover{
+    color: #0c0806;
+    background: rgb(23, 182, 23);
+}
+.skills .skills-content .right{ /*-----------------------------------*/
+    width: 45%;
+}
+.skills .skills-content .right img{
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* teams section styling */
+.teams .titulo::after{
+    content: "who with me";
+}
+.teams .carousel .card{
+    background: #353333;
+    border-radius: 6px;
+    padding: 25px 35px;
+    text-align: center;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+.teams .carousel .card:hover{
+    background: crimson;
+}
+.teams .carousel .card .box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+.teams .carousel .card:hover .box{
+    transform: scale(1.05);
+}
+.teams .carousel .card .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+}
+.teams .carousel .card img{
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid crimson;
+    transition: all 0.3s ease;
+}
+.teams .carousel .card:hover img{
+    border-color: #fff;
+}
+.owl-dots{
+    text-align: center;
+    margin-top: 20px;
+}
+.owl-dot{
+    height: 13px;
+    width: 13px;
+    margin: 0 5px;
+    outline: none!important;
+    border-radius: 50%;
+    border: 2px solid crimson!important;
+    transition: all 0.3s ease;
+}
+.owl-dot.active{
+    width: 35px;
+    border-radius: 14px;
+}
+.owl-dot.active,
+.owl-dot:hover{
+    background: crimson!important;
+}
+
+/* contact section styling */
+.contact .titulo::after{
+    content: "get in touch";
+}
+.contact .contact-content .column{
+    width: calc(50% - 30px);
+}
+.contact .contact-content .text{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.contact .contact-content .left p{
+    text-align: justify;
+}
+.contact .contact-content .left .icons{
+    margin: 10px 0;
+}
+.contact .contact-content .row{
+    display: flex;
+    height: 65px;
+    align-items: center;
+}
+.contact .contact-content .row .info{
+    margin-left: 30px;
+}
+.contact .contact-content .row i{
+    font-size: 25px;
+    color: crimson;
+}
+.contact .contact-content .info .head{
+    font-weight: 500;
+}
+.contact .contact-content .info .sub-titulo{
+    color: #fdf5f5;
+}
+.contact .right form .fields{
+    display: flex;
+}
+.contact .right form .field,
+.contact .right form .fields .field{
+    height: 45px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+.contact .right form .textarea{
+    height: 80px;
+    width: 100%;
+}
+.contact .right form .name{
+    margin-right: 10px;
+}
+.contact .right form .email{
+    margin-left: 10px;  
+}
+.contact .right form .field input,
+.contact .right form .textarea textarea{
+    height: 100%;
+    width: 100%;
+    border: 1px solid lightgrey;
+    border-radius: 6px;
+    outline: none;
+    padding: 0 15px;
+    font-size: 17px;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+.contact .right form .field input:focus,
+.contact .right form .textarea textarea:focus{
+    border-color: #b3b3b3;
+}
+.contact .right form .textarea textarea{
+    padding-top: 10px;
+    resize: none;
+}
+.contact .right form .button{
+    height: 47px;
+    width: 170px;
+}
+.contact .right form .button button{
+    width: 100%;
+    height: 100%;
+    border: 2px solid crimson;
+    background: crimson;
+    color: #fff;
+    outline: none;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.contact .right form .button button:hover{
+    color: crimson;
+    background: none;
+}
+
+/* footer section styling */
+footer{
+    background: #111;
+    padding: 15px 23px;
+    color: #fff;
+    text-align: center;
+}
+footer span a{
+    color: #ff6333;
+    text-decoration: none;
+}
+footer span a:hover{
+    text-decoration: underline;
+}
+
+
+/* responsive media query start */
+@media (max-width: 1300px) {
+    .home .tamanhou{
+        margin-left: 0px;
+    }
+}
+
+@media (max-width: 1104px) {
+    .Sobre .Sobre-content .left img{
+        height: 350px;
+        width: 350px;
+    }
+    .skills .skills-content .right img{
+        height: 350px;
+        width: 350px;
+    }
+}
+
+@media (max-width: 991px) {
+    .tamanhou{
+        padding: 0 50px;
+    }
+}
+@media (max-width: 947px){
+    .navbar .menu-cart{
+        display: flex;
+    }
+    .navbar .menu-cart i{
+        text-decoration: none;
+        color: #fff;
+        font-size: 23px;
+        cursor: pointer;
+    }
+    .navbar .menu-cart span{
+        text-decoration: none;
+        color: #fff;
+        font-size: 16px;
+        background: #d6471c;
+        padding: 0px 6px 0px 5px;
+        border-radius: 5px;
+        margin: 0px 0px 0px 5px;
+        position: relative;
+        top: -10px;
+        z-index: -1;
+        cursor: pointer;
+    }
+   
+    .menu-btn{
+        display: block;
+        z-index: 999;
+    }
+    .menu-btn i.active:before{
+        content: "\f00d";
+    }
+    .navbar .menu{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background: #111;
+        text-align: center;
+        padding-top: 80px;
+        transition: all 0.3s ease;
+    }
+    .navbar .menu.active{
+        left: 0;
+    }
+    .navbar .menu li{
+        display: block;
+    }
+    .navbar .menu li a{
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 25px;
+    }
+    .home .home-content .text-2{
+        font-size: 70px;
+    }
+    .home .home-content .text-3{
+        font-size: 35px;
+    }
+    .home .home-content a{
+        font-size: 23px;
+        padding: 10px 30px;
+    }
+    .tamanhou{
+        max-width: 930px;
+    }
+    .Sobre .Sobre-content .column{
+        width: 100%;
+    }
+    .Sobre .Sobre-content .left{
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 60px;
+    }
+    .Sobre .Sobre-content .right{
+        flex: 100%;
+    }
+    .serviçoss .blocodep .card{
+        width: calc(50% - 10px);
+        margin-bottom: 20px;
+    }
+    .skills .skills-content .column,
+    .contact .contact-content .column{
+        width: 100%;
+        margin-bottom: 35px;
+    }
+
+    .skills .skills-content .right{
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 60px;
+    }
+    
+}
+
+@media (max-width: 690px) {
+    .tamanhou{
+        padding: 0 23px;
+    }
+    .home .home-content .text-2{
+        font-size: 60px;
+    }
+    .home .home-content .text-3{
+        font-size: 32px;
+    }
+    .home .home-content a{
+        font-size: 20px;
+    }
+    .serviçoss .blocodep .card{
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+   
+    
+    .scroll-up-btn{
+        right: 15px;
+        bottom: 15px;
+        height: 38px;
+        width: 35px;
+        font-size: 23px;
+        line-height: 38px;
+    }
+}
